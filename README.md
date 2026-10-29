@@ -1,5 +1,7 @@
 # Task Manager
 
+**Live Demo:** https://task-management-seven-blue.vercel.app
+
 A full stack task management app built with Next.js (App Router), Neon PostgreSQL and Tailwind CSS. Ready to deploy on Vercel.
 
 ## Features
@@ -16,6 +18,7 @@ A full stack task management app built with Next.js (App Router), Neon PostgreSQ
 | --------- | -------------------------------- |
 | Frontend  | Next.js 16, React 19, Tailwind 4 |
 | Validation | Zod                             |
+| HTTP client | Axios                          |
 | Backend   | Next.js Route Handlers (REST)    |
 | Database  | Neon (PostgreSQL)                |
 | Hosting   | Vercel                           |
@@ -29,8 +32,18 @@ app/
     tasks/[id]/route.ts         PUT, PATCH, DELETE
     weather/route.ts            GET (third party API)
   page.tsx
-components/                     UI components
+components/
+  tasks/                        TaskManager, TaskForm, TaskItem, TaskList, TaskFilter
+  weather/                      WeatherWidget
+  ui/                           Button, Card, Input, Textarea, Alert
+hooks/
+  useTasks.ts                   Task state and actions
+  useWeather.ts                 Weather state and search
 lib/
+  api/                          Axios client and API calls used by the frontend
+    client.ts
+    tasks.api.ts
+    weather.api.ts
   controllers/                  Request handling and responses
     task.controller.ts
     weather.controller.ts
@@ -47,7 +60,9 @@ db/schema.sql                   Database schema
 scripts/setup-db.mjs            Creates the tasks table
 ```
 
-Request flow: `route -> controller -> zod schema (validate) -> service -> database / external API`
+Frontend flow: `component -> hook -> lib/api (axios) -> /api route`
+
+Backend flow: `route -> controller -> zod schema (validate) -> service -> database / external API`
 
 ## Setup Instructions
 
