@@ -39,3 +39,11 @@ Screenshots captured from the running app (`npm run dev`) connected to Neon Post
 ![Get tasks](06-api-get-tasks.png)
 
 Full request and response log for create, read, update, complete, delete and validation: [api-test-results.md](api-test-results.md)
+
+## Postman Collection
+
+[task-management.postman_collection.json](task-management.postman_collection.json) contains every endpoint with test assertions.
+
+1. In Postman, click **Import** and select the file.
+2. `baseUrl` is set to the live deployment. Change it to `http://localhost:3000` in the collection variables to test locally.
+3. Run the collection. **Create Task** saves the new id to `taskId` for the update, complete and delete requests.

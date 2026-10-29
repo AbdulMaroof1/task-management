@@ -139,6 +139,8 @@ CREATE TABLE IF NOT EXISTS tasks (
 | DELETE | `/api/tasks/:id`  | Delete a task     | -                                        |
 | GET    | `/api/weather?city=London` | Current weather for a city | -                    |
 
+Postman collection: [proof/task-management.postman_collection.json](proof/task-management.postman_collection.json) (import it in Postman and run).
+
 Example:
 
 ```bash
