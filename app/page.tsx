@@ -1,5 +1,5 @@
-import TaskManager from "@/components/TaskManager";
-import WeatherWidget from "@/components/WeatherWidget";
+import TaskManager from "@/components/tasks/TaskManager";
+import WeatherWidget from "@/components/weather/WeatherWidget";
 
 export default function Home() {
   return (
